@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baixar Basalt</title>
   <meta name="description" content="Um novo editor de notas." />
-  <link rel="icon" type="image/svg+xml" href="images/basalt_logo_solo.svg" />
+  <link rel="icon" type="image/svg+xml" href="../images/basalt_logo_solo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../style.css" />
   <style>
     body {
       background: #0b0c0d;
@@ -221,18 +221,18 @@
 
   <header class="main-nav-header">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/basalt_logo_solo_white.svg" alt="Basalt Logo" />
+      <a href="../" class="nav-logo">
+        <img src="../images/basalt_logo_solo_white.svg" alt="Basalt Logo" />
         <span>Basalt</span>
       </a>
       <nav class="nav-links">
-        <a href="index.html#interactive-preview">Como funciona</a>
-        <a href="index.html#use-cases">Casos de Uso</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="download.html" class="nav-btn-mobile">Baixar</a>
+        <a href="../#interactive-preview">Como funciona</a>
+        <a href="../#use-cases">Casos de Uso</a>
+        <a href="../#faq">FAQ</a>
+        <a href="./" class="nav-btn-mobile">Baixar</a>
       </nav>
       <div class="nav-cta">
-        <a href="download.html" class="btn-nav-primary">
+        <a href="./" class="btn-nav-primary">
           <span class="material-icons">file_download</span>
           <span>Baixar App</span>
         </a>
@@ -269,7 +269,7 @@
           <!-- Windows -->
           <div class="download-column">
             <h2 class="column-title">
-              <img src="images/windows.svg" class="column-logo" alt="" />
+              <img src="../images/windows.svg" class="column-logo" alt="" />
               <span>Windows</span>
             </h2>
             <div class="links-list">
@@ -289,7 +289,7 @@
           <!-- Linux -->
           <div class="download-column">
             <h2 class="column-title">
-              <img src="images/linux.svg" class="column-logo" alt="" />
+              <img src="../images/linux.svg" class="column-logo" alt="" />
               <span>Linux</span>
             </h2>
             <div class="links-list">
@@ -330,7 +330,7 @@
           <!-- MacOS -->
           <div class="download-column">
             <h2 class="column-title">
-              <img src="images/macos.svg" class="column-logo" alt="" />
+              <img src="../images/macos.svg" class="column-logo" alt="" />
               <span>MacOS</span>
             </h2>
             <div class="links-list">
@@ -358,7 +358,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const userAgent = window.navigator.userAgent;
@@ -384,7 +384,7 @@
       let linksHtml = "";
 
       if (detectedOS === "Windows") {
-        logoSrc = "images/windows.svg";
+        logoSrc = "../images/windows.svg";
         osDisplayName = "Windows";
         linksHtml = `
           <a href="#" class="download-link">
@@ -399,7 +399,7 @@
           </a>
         `;
       } else if (detectedOS === "macOS") {
-        logoSrc = "images/macos.svg";
+        logoSrc = "../images/macos.svg";
         osDisplayName = "MacOS";
         linksHtml = `
           <a href="#" class="download-link">
@@ -409,7 +409,7 @@
           </a>
         `;
       } else if (detectedOS === "Linux") {
-        logoSrc = "images/linux.svg";
+        logoSrc = "../images/linux.svg";
         osDisplayName = "Linux";
         linksHtml = `
           <a href="#" class="download-link">
