@@ -1,0 +1,104 @@
+  <!-- Use Cases Section -->
+  <section class="use-cases-section" id="use-cases">
+    <div class="use-cases-container">
+      <h2 class="use-cases-title">Casos de Uso</h2>
+      <p class="use-cases-subtitle">O Basalt se adapta ao seu jeito de pensar e trabalhar.</p>
+      
+      <!-- Row 1: Primary Cases (Always Visible) -->
+      <div class="use-cases-gallery">
+        <div class="use-case-vertical-card active">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/write.png" alt="Escrita" />
+            </div>
+            <div class="card-info">
+              <h3>Escrita</h3>
+              <p>Escreva livros, artigos e documentação sem nenhuma distração.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/organization.png" alt="Organização" />
+            </div>
+            <div class="card-info">
+              <h3>Organização</h3>
+              <p>Mantenha seus projetos, arquivos e referências no mesmo lugar.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/study.png" alt="Estudos" />
+            </div>
+            <div class="card-info">
+              <h3>Estudos</h3>
+              <p>Crie resumos e conecte matérias de forma visual e simples.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/developing.png" alt="Desenvolvimento" />
+            </div>
+            <div class="card-info">
+              <h3>Desenvolvimento</h3>
+              <p>Documente sistemas e guarde snippets de código com facilidade.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Secondary Cases (Hidden initially) -->
+      <div class="use-cases-gallery hidden-gallery" id="extra-cases-gallery">
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/preview-editor.png" alt="Markdown" />
+            </div>
+            <div class="card-info">
+              <h3>Markdown diário</h3>
+              <p>O prazer de escrever em Markdown sem interfaces pesadas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/preview-graph.png" alt="Segunda Mente" />
+            </div>
+            <div class="card-info">
+              <h3>Segunda mente</h3>
+              <p>Guarde ideias antes delas evaporarem 3 segundos depois.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/preview-canvas.png" alt="Worldbuilding" />
+            </div>
+            <div class="card-info">
+              <h3>Worldbuilding</h3>
+              <p>Organize personagens, mapas e universos inteiros.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-cases-actions">
+        <button id="btn-show-more-cases" class="btn btn-secondary">
+          <span>Ver mais casos</span>
+          <span class="material-icons">expand_more</span>
+        </button>
+      </div>
+    </div>
+  </section>

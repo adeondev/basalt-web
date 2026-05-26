@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basalt</title>
+  <meta name="description" content="Um novo editor de notas." />
+  <link rel="icon" type="image/svg+xml" href="images/basalt_logo_solo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="basalt">
+
+  <header class="main-nav-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/basalt_logo_solo_white.svg" alt="Basalt Logo" />
+        <span>Basalt</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#interactive-preview">Como funciona</a>
+        <a href="#use-cases">Casos de Uso</a>
+        <a href="#faq">FAQ</a>
+        <a href="download.html" class="nav-btn-mobile">Baixar</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="download.html" class="btn-nav-primary">
+          <span class="material-icons">file_download</span>
+          <span>Baixar App</span>
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Abrir menu">
+        <span class="material-icons">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="intro-wrapper">
+    <div class="intro-container">
+      <div class="intro-logo-header">
+        <img class="brand-logo" src="images/basalt_logo_solo_white.svg" alt="Basalt Notes Logo" />
+        <span class="brand-name-basalt">Basalt</span>
+        <span class="brand-name-notes">Notes</span>
+      </div>
+      <h1 class="intro-title">
+        <span class="intro-title-text"></span><span class="type-cursor"></span>
+      </h1>
+      <div class="intro-actions">
+        <a href="download.html" class="btn btn-primary" id="btn-download">Baixar App</a>
+        <a href="#use-cases" class="btn btn-secondary">Casos de uso</a>
+      </div>
+      <p class="intro-badge-notice">Aplicativo em fase de testes</p>
+    </div>
+  </div>
+
+  <!-- Mission & Values Section -->
+  <section class="mission-section">
+    <div class="icon-ticker">
+      <div class="icon-ticker-track" id="ticker-track">
+        <!-- Reusable Set of 12 Note-Related Icons (Repeated 4 times for ultra-wide safety) -->
+        <div class="ticker-set">
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h10.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"></path><path d="M15 2v5h5"></path></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l5.5 14.5L13 18l5-5z"></path><path d="m2 2 5 2.25L2 2z"></path></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="9" y1="4" x2="9" y2="10"></line><line x1="15" y1="4" x2="15" y2="10"></line></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 10-9.5 9.5-10-10V2z"></path><circle cx="9" cy="9" r="2"></circle></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></div>
+          <div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg></div>
+        </div>
+        <!-- Duplicates -->
+        <div class="ticker-set"><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h10.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"></path><path d="M15 2v5h5"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l5.5 14.5L13 18l5-5z"></path><path d="m2 2 5 2.25L2 2z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="9" y1="4" x2="9" y2="10"></line><line x1="15" y1="4" x2="15" y2="10"></line></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 10-9.5 9.5-10-10V2z"></path><circle cx="9" cy="9" r="2"></circle></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg></div></div>
+        <div class="ticker-set"><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h10.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"></path><path d="M15 2v5h5"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l5.5 14.5L13 18l5-5z"></path><path d="m2 2 5 2.25L2 2z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="9" y1="4" x2="9" y2="10"></line><line x1="15" y1="4" x2="15" y2="10"></line></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 10-9.5 9.5-10-10V2z"></path><circle cx="9" cy="9" r="2"></circle></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg></div></div>
+        <div class="ticker-set"><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h10.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"></path><path d="M15 2v5h5"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l5.5 14.5L13 18l5-5z"></path><path d="m2 2 5 2.25L2 2z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="9" y1="4" x2="9" y2="10"></line><line x1="15" y1="4" x2="15" y2="10"></line></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 10-9.5 9.5-10-10V2z"></path><circle cx="9" cy="9" r="2"></circle></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></div><div class="ticker-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="philosophy-section">
+    <div class="philosophy-container">
+      <h2 class="philosophy-highlight">Sem paywall. Sem plugin obrigatório. Sem transformar produtividade em assinatura mensal.</h2>
+      
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <h3>Por que o Basalt existe?</h3>
+          <p>Porque eu queria um app de notas que não parecesse uma nave espacial ou um painel corporativo. Só algo rápido, bonito e confortável de usar diariamente.</p>
+        </div>
+        
+        <div class="philosophy-card">
+          <h3>O que o Basalt tenta ser</h3>
+          <p>Um lugar pra escrever documentação, organizar ideias, criar livros, guardar projetos ou simplesmente pensar sem distração.</p>
+        </div>
+        
+        <div class="philosophy-card">
+          <h3>Ainda está em desenvolvimento</h3>
+          <p>O Basalt ainda está crescendo. Algumas coisas vão mudar, quebrar e melhorar com o tempo. Mas a ideia principal continua a mesma: fazer um software útil de verdade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive macOS App Mockup Section -->
+  <section class="interactive-preview-section" id="interactive-preview">
+    <div class="interactive-preview-container">
+      <div class="mac-mockup-wrapper">
+        <header class="mockup-topbar">
+          <div class="brand">
+            <img class="basalt-logo-image" src="images/basalt_logo_solo_white.svg" alt="" />
+            <div>
+              <strong>Basalt</strong>
+              <span>Lava</span>
+            </div>
+          </div>
+          <nav class="app-menubar" aria-label="Menu do app">
+            <span>Arquivo</span>
+            <span>Editar</span>
+            <span>Exibir</span>
+            <span>Projeto</span>
+          </nav>
+          <div class="window-drag-region"></div>
+          <div class="topbar-actions">
+            <button class="icon-button" title="Projetos">
+              <span class="material-icons">folder</span>
+            </button>
+            <button class="icon-button" title="Salvar">
+              <span class="material-icons">save</span>
+            </button>
+            <div class="history-controls">
+              <button class="icon-button" title="Desfazer"><span class="material-icons">undo</span></button>
+              <button class="icon-button" title="Refazer"><span class="material-icons">redo</span></button>
+            </div>
+            <button class="primary-button" title="Configuracoes">
+              <span class="material-icons">settings</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="mockup-app-content">
+          <div class="mockup-layout">
+            <div class="left-stack">
+              <nav class="activity-rail" aria-label="Navegacao lateral">
+                <button class="active" title="Documentos"><span class="material-icons">description</span></button>
+                <button title="Grafo"><span class="material-icons">hub</span></button>
+                <button title="Canvas"><span class="material-icons">dashboard</span></button>
+                <button title="Midia"><span class="material-icons">image</span></button>
+                <button title="Slate"><img class="slate-logo" src="images/slate-logo.svg" alt="" width="20" height="20" draggable="false" /></button>
+              </nav>
+              <aside class="workspace-sidebar">
+          <div class="documents-sidebar">
+            <div class="section-header">
+              <div class="section-title">
+                <div>
+                  <span>Documentos</span>
+                  <strong>3 notas</strong>
+                </div>
+              </div>
+              <div class="section-actions">
+                <button class="section-action primary" title="Pesquisar">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <button class="section-action primary" title="Criar">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="search-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input placeholder="Buscar notas..." disabled />
+            </div>
+
+            <div class="note-tree">
+              <div class="note-row active">
+                <span class="tree-expander"><span class="tree-expander-spacer"></span></span>
+                <span class="tree-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </span>
+                <span class="note-title">Curiosidades sobre a Lava</span>
+                <small>Principal</small>
+              </div>
+
+              <div class="note-row">
+                <span class="tree-expander">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </span>
+                <span class="tree-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </span>
+                <span class="note-title">Projetos</span>
+              </div>
+
+              <div class="note-row">
+                <span class="tree-expander">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </span>
+                <span class="tree-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </span>
+                <span class="note-title">Rotinas</span>
+              </div>
+
+            </div>
+          </div>
+
+              </aside>
+            </div>
+
+          <main class="workspace">
+            <div class="tabs-bar compact">
+              <div class="tab active">
+                <span class="material-icons">description</span>
+                <span>Curiosidades sobre a Lava</span>
+                <span class="tab-unsaved-dot"></span>
+              </div>
+              <div class="tab">
+                <span class="material-icons">hub</span>
+                <span>Grafo</span>
+              </div>
+            </div>
+            <section class="editor-shell">
+              <div class="editor-toolbar">
+                <div class="breadcrumb">
+                  <span>Principal</span>
+                  <strong>/</strong>
+                  <input value="Curiosidades sobre a Lava" aria-label="Titulo da nota" readonly />
+                </div>
+                <div class="toolbar-actions">
+                  <button class="icon-button" title="Buscar nesta nota">
+                    <span class="material-icons">search</span>
+                  </button>
+                  <span class="editor-line-status" id="mockup-line-status">Linha 1/8</span>
+                  <div class="segmented">
+                    <button class="active" id="mac-tab-edit">
+                      <span class="material-icons">edit</span>
+                      <span>Editar</span>
+                    </button>
+                    <button id="mac-tab-preview">
+                      <span class="material-icons">visibility</span>
+                      <span>Preview</span>
+                    </button>
+                  </div>
+                  <button class="icon-button danger" title="Apagar nota">
+                    <span class="material-icons">delete</span>
+                  </button>
+                </div>
+              </div>
+              <div class="editor-area wide">
+            <!-- Edit Mode Panel -->
+            <div class="mockup-editor-panel active" id="editor-panel">
+              <div class="editor-line-numbers">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+              </div>
+              <div class="editor-textarea-container">
+                <div class="editor-textarea" id="mockup-editor-textarea"></div>
+                <span class="mockup-text-cursor" id="mockup-text-cursor"></span>
+              </div>
+            </div>
+
+            <!-- Preview Mode Panel -->
+            <div class="mockup-preview-panel" id="preview-panel">
+              <div class="preview-content-rendered">
+                <h1>Curiosidades sobre a Lava 🌋</h1>
+
+                <p>A lava é rocha fundida expelida por um vulcão durante uma erupção.</p>
+
+                <p>Quando ela resfria, transforma-se em diferentes tipos de pedras vulcânicas.</p>
+
+                <p><strong>Fatos vulcânicos:</strong></p>
+                <ul class="preview-list-standard">
+                  <li>O resfriamento rápido da lava rica em sílica cria a <strong>Obsidiana</strong></li>
+                  <li>O <strong>Basalto</strong> é a rocha formada pelo resfriamento de lavas fluidas</li>
+                  <li>O basalto compõe a maior parte do fundo oceânico da Terra</li>
+                  <li>A obsidiana era usada na antiguidade para criar ferramentas afiadas</li>
+                </ul>
+
+                <p>É incrível como o calor extremo da terra cria materiais tão sólidos.</p>
+
+                <p>Estes minerais são fundamentais para a nossa geologia e para o Basalt.</p>
+
+                <p>A lava pode atingir temperaturas superiores a 1.200 graus Celsius.</p>
+
+                <p>Cada nota aqui é como uma pedra: sólida, duradoura e única.</p>
+              </div>
+            </div>
+          </div>
+            </section>
+          </main>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fake Mouse Pointer (Wikimedia SVG Pointer) - MOVED OUTSIDE FOR TRANSFORM-SAFE POSITIONING -->
+      <div class="fake-mouse-pointer" id="fake-mouse-pointer">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="24" viewBox="0 0 210.20869 322.25406">
+          <g transform="translate(-134.89565,-18.18981)">
+            <g fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="10" style="mix-blend-mode: normal">
+              <path d="M269.72954,224.49021l66.66934,-7.55057l-191.70681,-187.13962l5.40284,264.32754l49.05751,-42.23674l30.83115,81.91938l69.86017,-27.59352z" fill="#f8f8f8" stroke="#000000" stroke-width="0"/>
+              <path d="M142.89566,26.18982l2.87148,270.00536" fill="none" stroke="#000000" stroke-width="16"/>
+              <path d="M145.76713,296.19518l51.30754,-44.65663" fill="none" stroke="#000000" stroke-width="16"/>
+              <path d="M143.75437,27.03045l192.95306,188.89218" fill="none" stroke="#000000" stroke-width="16"/>
+              <path d="M269.3628,223.79996l67.74154,-6.14499" fill="none" stroke="#000000" stroke-width="16"/>
+              <path d="M227.07519,332.2869l-29.01701,-79.36662" fill="none" stroke="#000000" stroke-width="16"/>
+              <path d="M269.02138,224.68921l28.05429,78.44956" fill="none" stroke="#000000" stroke-width="16"/>
+              <path d="M228.13306,332.44388l70.19659,-26.90536" fill="none" stroke="#000000" stroke-width="16"/>
+              <path d="M250.09444,153.97158l35.9199,37.98824" fill="none" stroke="#e4e4e4" stroke-width="7.5"/>
+              <path d="M156.93311,84.52433c0,0 -0.5676,-24.06341 0.99189,-24.8792c0.31322,-0.16385 25.22398,24.68929 25.22398,24.68929" fill="none" stroke="#e4e4e4" stroke-width="7.5"/>
+              <path d="M238.23338,313.78519l41.54492,-15.92358" fill="none" stroke="#e4e4e4" stroke-width="7.5"/>
+              <path d="M158.9375,169.5l2,94" fill="none" stroke="#ffffff" stroke-width="7"/>
+            </g>
+          </g>
+        </svg>
+        <div class="click-pulse" id="click-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section class="use-cases-section" id="use-cases">
+    <div class="use-cases-container">
+      <h2 class="use-cases-title">Casos de Uso</h2>
+      
+      <!-- Row 1: Primary Cases (Always Visible) -->
+      <div class="use-cases-gallery">
+        <div class="use-case-vertical-card active">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/write.png" alt="Escrita" />
+            </div>
+            <div class="card-info">
+              <h3>Escrita</h3>
+              <p>Escreva livros, artigos e documentação sem nenhuma distração.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/organization.png" alt="Organização" />
+            </div>
+            <div class="card-info">
+              <h3>Organização</h3>
+              <p>Mantenha seus projetos, arquivos e referências no mesmo lugar.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/study.png" alt="Estudos" />
+            </div>
+            <div class="card-info">
+              <h3>Estudos</h3>
+              <p>Crie resumos e conecte matérias de forma visual e simples.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/developing.png" alt="Desenvolvimento" />
+            </div>
+            <div class="card-info">
+              <h3>Desenvolvimento</h3>
+              <p>Documente sistemas e guarde snippets de código com facilidade.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Secondary Cases (Hidden initially) -->
+      <div class="use-cases-gallery hidden-gallery" id="extra-cases-gallery">
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/preview-editor.png" alt="Markdown" />
+            </div>
+            <div class="card-info">
+              <h3>Markdown diário</h3>
+              <p>O prazer de escrever em Markdown sem interfaces pesadas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/preview-graph.png" alt="Segunda Mente" />
+            </div>
+            <div class="card-info">
+              <h3>Segunda mente</h3>
+              <p>Guarde ideias antes delas evaporarem 3 segundos depois.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="use-case-vertical-card">
+          <div class="btn-content">
+            <div class="card-image-wrapper">
+              <img src="images/preview-canvas.png" alt="Worldbuilding" />
+            </div>
+            <div class="card-info">
+              <h3>Worldbuilding</h3>
+              <p>Organize personagens, histórias e universos inteiros.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-cases-actions">
+        <button id="btn-show-more-cases" class="btn btn-secondary">
+          <span>Ver mais casos</span>
+          <span class="material-icons">expand_more</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Interactive Accordion) -->
+  <section class="faq-section" id="faq">
+    <div class="faq-container">
+      <h2 class="faq-title">Perguntas Frequentes</h2>
+      
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <div class="faq-question">O Basalt é gratuito? <span class="material-icons">expand_more</span></div>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer-content">
+              <div class="faq-answer-text">
+                <p>Sim. E a ideia é continuar sendo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">O Basalt é open source? <span class="material-icons">expand_more</span></div>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer-content">
+              <div class="faq-answer-text">
+                <p>Sim. O código é aberto e qualquer pessoa pode estudar, modificar ou contribuir.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">O Basalt funciona offline? <span class="material-icons">expand_more</span></div>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer-content">
+              <div class="faq-answer-text">
+                <p>Sim. O foco é o aplicativo continuar útil mesmo sem internet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">O Basalt é inspirado no Obsidian? <span class="material-icons">expand_more</span></div>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer-content">
+              <div class="faq-answer-text">
+                <p>Sim. O Basalt nasceu inspirado em apps de notas modernos — principalmente o Obsidian — mas tentando seguir um caminho próprio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Qual a diferença do Basalt? <span class="material-icons">expand_more</span></div>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer-content">
+              <div class="faq-answer-text">
+                <p>A ideia não é competir em quantidade de plugins ou virar uma plataforma gigante. O foco é experi&ecirc;ncia, escrita e organização confortável.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Por que fazer outro app de notas? <span class="material-icons">expand_more</span></div>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer-content">
+              <div class="faq-answer-text">
+                <p>Porque nenhum era exatamente do jeito que eu queria usar diariamente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Tem suporte pra livros/documentos? <span class="material-icons">expand_more</span></div>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer-content">
+              <div class="faq-answer-text">
+                <p>Sim. O Basalt também foi pensado pra escrita longa, não só anotações rápidas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Vai ter sincronização? <span class="material-icons">expand_more</span></div>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer-content">
+              <div class="faq-answer-text">
+                <p>Provavelmente sim. Mas a prioridade atual é fazer o app funcionar bem localmente primeiro.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">O Basalt coleta dados? <span class="material-icons">expand_more</span></div>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer-content">
+              <div class="faq-answer-text">
+                <p>Não. O objetivo é manter o app o mais transparente e simples possível.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Placeholder Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-credits">
+        <div class="credit-item">
+          <img src="https://avatars.githubusercontent.com/u/265530670?v=4" alt="Deon" />
+          <span>Deon</span>
+        </div>
+        <div class="credit-item">
+          <img src="https://avatars.githubusercontent.com/u/55399471?v=4" alt="Daniyusk" />
+          <span>Daniyusk</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom Hover Tooltip -->
+  <div class="custom-hover-tooltip-wrapper" id="preview-tooltip-wrapper">
+    <div class="custom-hover-tooltip-circle">
+      <span>Teste Online</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

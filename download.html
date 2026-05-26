@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baixar Basalt</title>
+  <meta name="description" content="Um novo editor de notas." />
+  <link rel="icon" type="image/svg+xml" href="images/basalt_logo_solo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #0b0c0d;
+      color: #f4f5f7;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .download-page-wrapper {
+      padding-top: 140px;
+      padding-bottom: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    .download-content-panel {
+      width: 100%;
+      max-width: 900px;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Notice Banner */
+    .download-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #17181b;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 48px;
+      width: 100%;
+    }
+
+    .notice-icon {
+      color: #8775ef;
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .notice-text {
+      color: #f4f5f7;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    /* Center Detected OS Section */
+    .detected-section {
+      margin-bottom: 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .detected-eyebrow {
+      font-size: 14px;
+      font-weight: 500;
+      color: #8b9099;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .detected-info-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .detected-logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: brightness(0) invert(1);
+    }
+
+    .detected-name {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+
+    .detected-links-list {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* Grid for other options */
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 32px;
+      width: 100%;
+    }
+
+    @media (max-width: 820px) {
+      .download-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 440px) {
+      .download-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .download-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .column-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+      letter-spacing: -0.01em;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Column OS Logo sizing & coloring (white filter) */
+    .column-logo {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: brightness(0) invert(1);
+    }
+
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .android-soon {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Flat download link styling - turns white on hover */
+    .download-link {
+      display: inline-flex;
+      align-items: center;
+      color: #8775ef;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      position: relative;
+      cursor: not-allowed;
+      outline: none;
+      border: none;
+      opacity: 0.7;
+    }
+
+    .download-link:hover {
+      color: #ffffff;
+      opacity: 1;
+    }
+
+    .download-link .btn-content {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .soon-text {
+      color: #8775ef;
+      font-size: 15px;
+      font-weight: 600;
+      opacity: 0.5;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body data-theme="basalt">
+
+  <header class="main-nav-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/basalt_logo_solo_white.svg" alt="Basalt Logo" />
+        <span>Basalt</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#interactive-preview">Como funciona</a>
+        <a href="index.html#use-cases">Casos de Uso</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="download.html" class="nav-btn-mobile">Baixar</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="download.html" class="btn-nav-primary">
+          <span class="material-icons">file_download</span>
+          <span>Baixar App</span>
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Abrir menu">
+        <span class="material-icons">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="download-page-wrapper">
+    <div class="download-content-panel">
+      
+      <!-- Notice Banner -->
+      <div class="download-notice">
+        <span class="material-icons notice-icon">info</span>
+        <span class="notice-text">Os downloads do Basalt estão temporariamente indisponíveis e serão liberados para todas as plataformas a partir de <strong>30/05/2026</strong>.</span>
+      </div>
+
+      <!-- Detected OS Section -->
+      <div id="detected-device-section" class="detected-section">
+        <span class="detected-eyebrow">Dispositivo detectado</span>
+        <div class="detected-info-block">
+          <img id="detected-os-logo" src="" alt="" class="detected-logo" />
+          <span id="detected-os-name" class="detected-name"></span>
+        </div>
+        <div id="detected-links" class="detected-links-list"></div>
+      </div>
+
+      <!-- Other Options Section -->
+      <div class="other-options-section">
+        
+        <div class="download-grid">
+          <!-- Windows -->
+          <div class="download-column">
+            <h2 class="column-title">
+              <img src="images/windows.svg" class="column-logo" alt="" />
+              <span>Windows</span>
+            </h2>
+            <div class="links-list">
+              <a href="#" class="download-link">
+                <span class="btn-content">
+                  <span>Exe x64</span>
+                </span>
+              </a>
+              <a href="#" class="download-link">
+                <span class="btn-content">
+                  <span>Exe x86</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Linux -->
+          <div class="download-column">
+            <h2 class="column-title">
+              <img src="images/linux.svg" class="column-logo" alt="" />
+              <span>Linux</span>
+            </h2>
+            <div class="links-list">
+              <a href="#" class="download-link">
+                <span class="btn-content">
+                  <span>Deb x64</span>
+                </span>
+              </a>
+              <a href="#" class="download-link">
+                <span class="btn-content">
+                  <span>Rpm x64</span>
+                </span>
+              </a>
+              <a href="#" class="download-link">
+                <span class="btn-content">
+                  <span>AppImage x64</span>
+                </span>
+              </a>
+              
+              <a href="#" class="download-link">
+                <span class="btn-content">
+                  <span>Deb x86</span>
+                </span>
+              </a>
+              <a href="#" class="download-link">
+                <span class="btn-content">
+                  <span>Rpm x64</span>
+                </span>
+              </a>
+              <a href="#" class="download-link">
+                <span class="btn-content">
+                  <span>AppImage x64</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- MacOS -->
+          <div class="download-column">
+            <h2 class="column-title">
+              <img src="images/macos.svg" class="column-logo" alt="" />
+              <span>MacOS</span>
+            </h2>
+            <div class="links-list">
+              <a href="#" class="download-link">
+                <span class="btn-content">
+                  <span>Universal ZIP</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Android -->
+          <div class="download-column">
+            <h2 class="column-title">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" class="column-logo" alt="" />
+              <span>Android</span>
+            </h2>
+            <div class="links-list">
+              <span class="soon-text">Em Breve</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const userAgent = window.navigator.userAgent;
+      const platform = window.navigator.platform || "";
+      let detectedOS = "Windows"; // Default fallback
+      
+      if (['MacIs', 'Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'].includes(platform) || /Macintosh/i.test(userAgent)) {
+        detectedOS = "macOS";
+      } else if (['Win32', 'Win64', 'Windows', 'WinCE'].includes(platform) || /Windows/i.test(userAgent)) {
+        detectedOS = "Windows";
+      } else if (/Android/i.test(userAgent)) {
+        detectedOS = "Android";
+      } else if (/Linux/.test(platform) || /Linux/i.test(userAgent)) {
+        detectedOS = "Linux";
+      }
+
+      const logoEl = document.getElementById("detected-os-logo");
+      const nameEl = document.getElementById("detected-os-name");
+      const linksEl = document.getElementById("detected-links");
+
+      let logoSrc = "";
+      let osDisplayName = "";
+      let linksHtml = "";
+
+      if (detectedOS === "Windows") {
+        logoSrc = "images/windows.svg";
+        osDisplayName = "Windows";
+        linksHtml = `
+          <a href="#" class="download-link">
+            <span class="btn-content">
+              <span>Exe x64</span>
+            </span>
+          </a>
+          <a href="#" class="download-link">
+            <span class="btn-content">
+              <span>Exe x86</span>
+            </span>
+          </a>
+        `;
+      } else if (detectedOS === "macOS") {
+        logoSrc = "images/macos.svg";
+        osDisplayName = "MacOS";
+        linksHtml = `
+          <a href="#" class="download-link">
+            <span class="btn-content">
+              <span>Universal ZIP</span>
+            </span>
+          </a>
+        `;
+      } else if (detectedOS === "Linux") {
+        logoSrc = "images/linux.svg";
+        osDisplayName = "Linux";
+        linksHtml = `
+          <a href="#" class="download-link">
+            <span class="btn-content">
+              <span>Deb x64</span>
+            </span>
+          </a>
+          <a href="#" class="download-link">
+            <span class="btn-content">
+              <span>Rpm x64</span>
+            </span>
+          </a>
+          <a href="#" class="download-link">
+            <span class="btn-content">
+              <span>AppImage x64</span>
+            </span>
+          </a>
+        `;
+      } else if (detectedOS === "Android") {
+        logoSrc = "https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg";
+        osDisplayName = "Android";
+        linksHtml = `
+          <span class="soon-text">Em Breve</span>
+        `;
+      }
+
+      logoEl.src = logoSrc;
+      nameEl.textContent = osDisplayName;
+      linksEl.innerHTML = linksHtml;
+
+      // Click handler for disabled links
+      document.addEventListener("click", (e) => {
+        const link = e.target.closest(".download-link");
+        if (link) {
+          e.preventDefault();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
